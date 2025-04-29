@@ -1,0 +1,107 @@
+<head>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e0e5ec;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.neumorphic {
+  background: #e0e5ec;
+  border-radius: 20px;
+  box-shadow:
+    10px 10px 20px #a3b1c6,
+    -10px -10px 20px #ffffff,
+    0 0 0 1px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.neumorphic-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 350px;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: rotateY(10deg) rotateX(5deg);
+  animation: float 6s ease-in-out infinite;
+}
+
+.neumorphic-input {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #555;
+  background: #e0e5ec;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-button {
+  padding: 15px 40px;
+  margin-top: 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.neumorphic-input:focus {
+  box-shadow:
+    inset 5px 5px 10px #a3b1c6,
+    inset -5px -5px 10px #ffffff;
+}
+
+.neumorphic-button:active {
+  box-shadow:
+    inset 5px 5px 10px #a3b1c6,
+    inset -5px -5px 10px #ffffff;
+  transform: translateY(2px);
+}
+
+h1 {
+  color: #555;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(163, 177, 198, 0.5);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: rotateY(10deg) rotateX(5deg) translateY(0);
+  }
+  50% {
+    transform: rotateY(12deg) rotateX(7deg) translateY(-10px);
+  }
+}
+</style>
+</head>
+<body>
+  <div class="fullscreen-container">
+    <div class="neumorphic neumorphic-card">
+      <h1>Login</h1>
+      <input type="text" class="neumorphic neumorphic-input" placeholder="Username">
+      <input type="password" class="neumorphic neumorphic-input" placeholder="Password">
+      <button class="neumorphic neumorphic-button">Sign In</button>
+    </div>
+  </div>
+</body>
